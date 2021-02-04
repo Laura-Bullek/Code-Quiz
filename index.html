@@ -62,54 +62,7 @@
             </div>
         </div> 
 
-        <!--Container for when the quiz is over and user can enter initals-->
-        <div class="container" id="gameOverPage" style = "display:none">
-            <div class="card border-success mb-5">
-                <div class="card-header bg-transparent border-success"id="headerBox">Game Over
-                </div>
-    
-                <div class="card-body text-success">
-                    <h5 class="card-title">Enter your name for the score board. 
-                        <div class="form-inline">
-                            <input type="text" size = "40" placeholder="Enter here" name="intials" id="userName"/>
-                        </div>
-                    </h5>
-    
-                    <div class="card-footer bg-transparent border-success">
-                        <!--Button will capture the initals for high score-->
-                        <button class="btn btn-primary" id="submitScoreBtn">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    <!--Container to hold the scores or start quiz again-->
-    <div class="container" id="scoresPage" style = "display:none">
-        <div class="card border-success mb-5">
-            <div class="card-header bg-transparent border-success"id="headerBox">Javascript Quiz Game: Score Board
-            </div>
-
-            <div class="card-body text-success">
-                <p class="card-text"id="highScoreTable">The following are the current high scores. See how you rank.</p>
-                <div id="highScoreColumnHeaders">
-                    <h3>Player's Name</h3>
-                    <h3>Player's Score</h3>
-                </div>
-                
-                <div id = "highScoreName"></div>
-                <div id = "highScoreScore"></div>
-            </div>
         
-            <div class="card-footer bg-transparent border-success">
-                <div id="againClearBtns">
-                    <button id="playAgain" onclick="backToHome()">Back to Home</button>
-                    <button id="clearHighScore" onclick="clearScores()">Clear Highscores</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 
     <script src="assets/javascript.js"></script>
 </body>

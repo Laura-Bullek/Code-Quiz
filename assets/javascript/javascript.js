@@ -32,7 +32,6 @@ var showAnswer = document.getElementById("answer");
 var start = document.getElementById("start");
 var sbutton = document.getElementById("sbutton");
 var quiz = document.getElementById("quiz");
-var choices = document.getElementById("choices");
 var scoreId = document.getElementById("score");
 var timer = document.querySelector(".timer");
 var choiceA = document.getElementById("A");

@@ -187,3 +187,9 @@ function checkAnswer(event) {
         }
     }
 }
+
+function endGame() {
+    quiz.innerHTML = " Your Score: " + score + " of 10";
+    scoreId.style.display = "block";
+    clearTimeout(ticker)
+}

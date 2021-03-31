@@ -1,37 +1,4 @@
-// These trivia questions are from: https://topessaywriter.org/multiple-choice-trivia-questions/
-var questions = [
-  {
-      question: "1.) Which of the following ingredients is not normally used to brew beer?",
-      choiceA : "Hops",
-      choiceB : "Yeast",
-      choiceC : "Malt",
-      choiceD: "Vinegar",
-      correct: "Vinegar",
-  },
-  {
-      question: "2.) What is the most densely populated U.S. state?",
-      choiceA : "Connecticut", 
-    choiceB : "New Jersey",
-    choiceC : "Rhode Island",
-    choiceD: "Maryland",
-      correct: "New Jersey",
-  },
-  {
-      question: "3.) Albert Einstein was a scientist famous for his work on physics. Where was he born?",
-      choiceA : "Germany",
-    choiceB : "United States",
-    choiceC : "France",
-    choiceD: "Austria",
-      correct: "Germany",
-  },
-  {
-      question: "4.) How fast can an ostrich run?",
-      choiceA : "15 mph",
-      choiceB : "30 mph",      
-      choiceC : "40 mph",
-      choiceD: "45 mph",
-      correct: "40 mph",
-  },]
+
 // WHEN I click the start button
 // - What does the markup look like?
 // - How is it styled?
@@ -59,38 +26,126 @@ var questions = [
 // - Use local storage to store high score information
 
 // Link elements to the DOM
-let questions = document.getElementById("questions");
-let showAnswer = document.getElementById("answer")
-let start = document.getElementById("start");
-let startButton = document.getElementsByClassName("start-button");
-let quiz = document.getElementById("quiz");
-let choices = document.getElementById("choices");
-let scoreId = document.getElementById("score");
-let timer = document.getElementsByClassName("timer");
-let choiceA = document.getElementById("A");
-let choiceB = document.getElementById("B");
-let choiceC = document.getElementById("C");
-let choiceD = document.getElementById("D");
-let saveButton = document.getElementById("save-button");
-let initialsInput = document.getElementById("initialsInput");
+var questions = document.getElementById("questions");
+var showAnswer = document.getElementById("answer")
+var start = document.getElementById("start");
+var sbutton = document.getElementById("sbutton");
+var quiz = document.getElementById("quiz");
+var choices = document.getElementById("choices");
+var scoreId = document.getElementById("score");
+var timer = document.querySelector(".timer");
+var choiceA = document.getElementById("A");
+var choiceB = document.getElementById("B");
+var choiceC = document.getElementById("C");
+var choiceD = document.getElementById("D");
+var savebtn = document.getElementById("savebtn");
+var providedints = document.getElementById("providedints");
+
+// Come up with multiple choice questions
+// Questions are from: https://topessaywriter.org/multiple-choice-trivia-questions/
+
+var questions = [
+    {
+        question: "1.) Which of the following ingredients is not normally used to brew beer?",
+        choiceA : "Hops",
+        choiceB : "Yeast",
+        choiceC : "Malt",
+        choiceD: "Vinegar",
+        correct: "Vinegar",
+    },
+    {
+        question: "2.) What is the most densely populated U.S. state?",
+        choiceA : "Connecticut", 
+        choiceB : "New Jersey",
+        choiceC : "Rhode Island",
+        choiceD: "Maryland",
+        correct: "New Jersey",
+    },
+    {
+        question: "3.) Albert Einstein was a scientist famous for his work on physics. Where was he born?",
+        choiceA : "Germany",
+        choiceB : "United States",
+        choiceC : "France",
+        choiceD: "Austria",
+        correct: "Germany",
+    },
+    {
+        question: "4.) How fast can an ostrich run?",
+        choiceA : "15 mph",
+        choiceB : "30 mph",      
+        choiceC : "40 mph",
+        choiceD: "45 mph",
+        correct: "40 mph",
+    },
+    {
+        question: "5.) Which state of the U.S. has recorded the fastest surface wind?",
+        choiceA: "Illinios",
+        choiceB: "New Hampshire",
+        choiceC: "Montana",
+        choiceD: "Alaska",
+        correct: "New Hampshire",
+    },
+    {
+        question: "How much of your vision do you lose if you go blind in one eye?",
+        choiceA: "50%",
+        choiceB: "10%",
+        choiceC: "35%",
+        choiceD: "20%",
+        correct: "20%",
+    },
+    {
+        question: "Which of the following means not equal to in Javascript",
+        choiceA: "!=",
+        choiceB: "<>",
+        choiceC: "=!",
+        choiceD: "not",
+        correct: "!=",
+    },
+    {
+        question: "What is the origin of the name “America”?",
+        choiceA: "From Amerigo Vespucci, famous 15th century explorer",
+        choiceB: "It was given as war compensation from Spain (“amerce”=fine)",
+        choiceC: "Named by king Ferdinand II after his favourite stallion",
+        choiceD: "From a spanish word meaning 'rich plains'",
+        correct: "From Amerigo Vespucci, famous 15th century explorer",
+    },
+    {
+        question: "Zulia is a province of which country?:",
+        choiceA: "Colombia",
+        choiceB: "Brazil",
+        choiceC: "Venezuela ",
+        choiceD: "Ecuador",
+        correct: "Venezuela",
+    },
+]
 
 // Initial variables
-let count = 0;
-let questionLength = questions.length;
-let currentQuestion = 0;
-let timer;
-let startingTime = 50;
-let ticker;
-let score = 0;
-let correct = questions.correct;
+var count = 0;
+var currentQuestion = 0;
+var timer;
+var startingTime = 50;
+var ticker;
+var score = 0;
+var correct = questions.correct;
 
-// Event listener for the start button
-start-button.addEventListener("click", startQuiz);
-
-// Event listeners for when answers are clicked
+sbutton.addEventListener("click", startQuiz);
 choiceA.addEventListener("click", checkAnswer);
 choiceB.addEventListener("click", checkAnswer);
 choiceC.addEventListener("click", checkAnswer);
 choiceD.addEventListener("click", checkAnswer);
 
+function startQuiz() {
+    ticker = setInterval(() => {
+        startingTime--;
+        timer.innerHTML = "Timer: " + startingTime;
+        if (startingTime <= 0) {
+            clearTimeout(ticker)
+            endGame()
+        }
+    }, 1000);
+
+    start.style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block";
+}
 

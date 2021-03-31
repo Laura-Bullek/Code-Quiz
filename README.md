@@ -46,8 +46,8 @@ March 2021 cohort instructors:
 - TA - Casey Ferguson [GitHub](https://github.com/cferg019)
 
 ## Usage
-* [GitHub Repository](https://github.com/Laura-Bullek/Advanced-CSS-Portfolio)
-* [Deployed Main Application](https://laura-bullek.github.io/Advanced-CSS-Portfolio/)
+* [GitHub Repository](https://github.com/Laura-Bullek/Code-Quiz)
+* [Deployed Main Application](https://laura-bullek.github.io/Code-Quiz/)
 
 ## Licensing
 MIT License

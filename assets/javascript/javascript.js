@@ -1,4 +1,5 @@
 
+//************* Pseudocode ******************/
 // WHEN I click the start button
 // - What does the markup look like?
 // - How is it styled?
@@ -8,11 +9,11 @@
 // WHEN I answer a question
 // - Another click listener
 // THEN I am presented with another question
-// - Hide the dprevious question, then show the next question
+// - Hide the previous question, then show the next question
 // WHEN I answer a question incorrectly
 // - Check for true/false comparison to correct answer
 // THEN time is subtracted from the clock
-// - Subtract 15 seconds with an incorrect answer
+// - Subtract 10 seconds with an incorrect answer
 // WHEN all questions are answered or the timer reaches 0
 // - When timer reaches zero, OR all questions are answered
 // THEN the game is over
@@ -45,81 +46,73 @@ var providedints = document.getElementById("providedints");
 // Questions are from: https://topessaywriter.org/multiple-choice-trivia-questions/
 
 var questions = [
-    {
-        question: "1.) Which of the following ingredients is not normally used to brew beer?",
-        choiceA : "Hops",
-        choiceB : "Yeast",
-        choiceC : "Malt",
-        choiceD: "Vinegar",
-        correct: "Vinegar",
-    },
-    {
-        question: "2.) What is the most densely populated U.S. state?",
-        choiceA : "Connecticut", 
-        choiceB : "New Jersey",
-        choiceC : "Rhode Island",
-        choiceD: "Maryland",
-        correct: "New Jersey",
-    },
-    {
-        question: "3.) Albert Einstein was a scientist famous for his work on physics. Where was he born?",
-        choiceA : "Germany",
-        choiceB : "United States",
-        choiceC : "France",
-        choiceD: "Austria",
-        correct: "Germany",
-    },
-    {
-        question: "4.) How fast can an ostrich run?",
-        choiceA : "15 mph",
-        choiceB : "30 mph",      
-        choiceC : "40 mph",
-        choiceD: "45 mph",
-        correct: "40 mph",
-    },
-    {
-        question: "5.) Which state of the U.S. has recorded the fastest surface wind?",
-        choiceA: "Illinios",
-        choiceB: "New Hampshire",
-        choiceC: "Montana",
-        choiceD: "Alaska",
-        correct: "New Hampshire",
-    },
-    {
-        question: "How much of your vision do you lose if you go blind in one eye?",
-        choiceA: "50%",
-        choiceB: "10%",
-        choiceC: "35%",
-        choiceD: "20%",
-        correct: "20%",
-    },
-    {
-        question: "Which of the following means not equal to in Javascript",
-        choiceA: "!=",
-        choiceB: "<>",
-        choiceC: "=!",
-        choiceD: "not",
-        correct: "!=",
-    },
-    {
-        question: "What is the origin of the name “America”?",
-        choiceA: "From Amerigo Vespucci, famous 15th century explorer",
-        choiceB: "It was given as war compensation from Spain (“amerce”=fine)",
-        choiceC: "Named by king Ferdinand II after his favourite stallion",
-        choiceD: "From a spanish word meaning 'rich plains'",
-        correct: "From Amerigo Vespucci, famous 15th century explorer",
-    },
-    {
-        question: "Zulia is a province of which country?:",
-        choiceA: "Colombia",
-        choiceB: "Brazil",
-        choiceC: "Venezuela ",
-        choiceD: "Ecuador",
-        correct: "Venezuela",
-    },
+{
+    question: "Which of the following ingredients is not normally used to brew beer?",
+    choiceA : "Hops",
+    choiceB : "Yeast",
+    choiceC : "Malt",
+    choiceD: "Vinegar",
+    correct: "Vinegar",
+},
+{
+    question: "What is the most densely populated U.S. state?",
+    choiceA : "Connecticut", 
+    choiceB : "New Jersey",
+    choiceC : "Rhode Island",
+    choiceD: "Maryland",
+    correct: "New Jersey",
+},
+{
+    question: "Albert Einstein was a scientist famous for his work on physics. Where was he born?",
+    choiceA : "Germany",
+    choiceB : "United States",
+    choiceC : "France",
+    choiceD: "Austria",
+    correct: "Germany",
+},
+{
+    question: "How fast can an ostrich run?",
+    choiceA : "15 mph",
+    choiceB : "30 mph",      
+    choiceC : "40 mph",
+    choiceD: "45 mph",
+    correct: "40 mph",
+},
+{
+    question: "Which state of the U.S. has recorded the fastest surface wind?",
+    choiceA: "Illinios",
+    choiceB: "New Hampshire",
+    choiceC: "Montana",
+    choiceD: "Alaska",
+    correct: "New Hampshire",
+},
+{
+    question: "How much of your vision do you lose if you go blind in one eye?",
+    choiceA: "50%",
+    choiceB: "10%",
+    choiceC: "35%",
+    choiceD: "20%",
+    correct: "20%",
+},
+{
+    question: "What is the origin of the name “America”?",
+    choiceA: "From Amerigo Vespucci, famous 15th century explorer",
+    choiceB: "It was given as war compensation from Spain (“amerce”=fine)",
+    choiceC: "Named by king Ferdinand II after his favourite stallion",
+    choiceD: "From a spanish word meaning 'rich plains'",
+    correct: "From Amerigo Vespucci, famous 15th century explorer",
+},
+{
+    question: "Zulia is a province of which country?:",
+    choiceA: "Colombia",
+    choiceB: "Brazil",
+    choiceC: "Venezuela ",
+    choiceD: "Ecuador",
+    correct: "Venezuela",
+},
 ]
 
-// Initial variables
+// Initialize variables
 var count = 0;
 var currentQuestion = 0;
 var timer;
@@ -128,16 +121,15 @@ var ticker;
 var score = 0;
 var correct = questions.correct;
 
+// Event listeners for start button
 sbutton.addEventListener("click", startQuiz);
-choiceA.addEventListener("click", checkAnswer);
-choiceB.addEventListener("click", checkAnswer);
-choiceC.addEventListener("click", checkAnswer);
-choiceD.addEventListener("click", checkAnswer);
 
+// Initializing the quiz
 function startQuiz() {
     ticker = setInterval(() => {
         startingTime--;
         timer.innerHTML = "Timer: " + startingTime;
+        // Ends the game when timer gets to zero
         if (startingTime <= 0) {
             clearTimeout(ticker)
             endGame()
@@ -159,9 +151,16 @@ function renderQuestion() {
     showAnswer.innerHTML = "";
 }
 
-function checkAnswer(event) {
-    var chosenAnswer = event.target.innerHTML;
+// Event listeners for answer clicks
+choiceA.addEventListener("click", checkAnswer);
+choiceB.addEventListener("click", checkAnswer);
+choiceC.addEventListener("click", checkAnswer);
+choiceD.addEventListener("click", checkAnswer);
 
+function checkAnswer(event) {
+    var chosenAnswer = this.innerHTML;
+
+    // When a correct answer is chosen, a <p> tag shows "CORRECT"
     if (chosenAnswer === questions[currentQuestion].correct) {
         score++;
         showAnswer.innerHTML = "<span style='color:#008000'>CORRECT</span>";
@@ -175,8 +174,10 @@ function checkAnswer(event) {
         }
 
     } else {
+        // When a wrong answer is chosen, a <p> tag shows "WRONG"
         showAnswer.innerHTML = "<span style='color:#ff0000'>WRONG</span>";
         currentQuestion++;
+        // Lose ten seconds when a wrong answer is clicked
         startingTime = startingTime - 10;
         if (currentQuestion === questions.length) {
             endGame();
@@ -189,7 +190,7 @@ function checkAnswer(event) {
 }
 
 function endGame() {
-    quiz.innerHTML = " Your Score: " + score + " of 10";
+    quiz.innerHTML = " Your Score: " + score + " out of 10";
     scoreId.style.display = "block";
     clearTimeout(ticker)
 }

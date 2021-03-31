@@ -42,8 +42,11 @@ body {
     color: #fff;
     border: #51aaa3 2px inset;
     margin-top: 5px;
-    padding: 5px;
-    
+    padding: 5px;  
+}
+
+#A:hover , #B:hover , #C:hover ,#D:hover { 
+    background-color: slategray;
 }
 
 @keyframes animatedBackground {

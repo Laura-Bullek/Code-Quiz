@@ -1,14 +1,16 @@
 # Code-Quiz
 
-# Description
-The **Password Generator** project is the third homework assignment of the March 2021 cohort from University of New Hampshire's full-stack coding bootcamp. 
+## Description
+The **Code Quiz** project is the third homework assignment of the March 2021 cohort from University of New Hampshire's full-stack coding bootcamp. 
 
-This project required us to create an application that an employee can use to generate a random password based on criteria they’ve selected. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that we write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+Allowing us to use the skills covered in this week's course, this project was created to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface.
+
+This project also includes Bootstrap, uses of local storage, and CSS animation. 
 
 ## User Story
- - AS AN employee with access to sensitive data
- - I WANT to randomly generate a password that meets certain criteria
- - SO THAT I can create a strong password that provides greater security
+ - AS A coding boot camp student
+ - I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
+ - SO THAT I can gauge my progress compared to my peers
 
 ## Acceptance Criteria
 ```

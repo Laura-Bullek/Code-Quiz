@@ -30,8 +30,8 @@ body {
 }
 
 .start-button {
-  background-color: #4CAF50;
-  border: none;
+  background-color: #51aaa3;
+  border: #333 4px solid;
   color: white;
   padding: 15px 32px;
   text-align: center;

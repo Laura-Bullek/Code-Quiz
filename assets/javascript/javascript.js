@@ -58,17 +58,26 @@ var questions = [
 // - Generate a form for user initials that has the score already generated
 // - Use local storage to store high score information
 
-var questions = document.getElementById("questions");
-var showAnswer = document.getElementById("answer")
-var start = document.getElementById("start");
-var startbutton = document.getElementsByClassName("start-button");
-var quiz = document.getElementById("quiz");
-var choices = document.getElementById("choices");
-var scoreId = document.getElementById("score");
-var timer = document.querySelector(".timer");
-var choiceA = document.getElementById("A");
-var choiceB = document.getElementById("B");
-var choiceC = document.getElementById("C");
-var choiceD = document.getElementById("D");
-var savebtn = document.getElementById("savebtn");
-var providedints = document.getElementById("providedints");
+let questions = document.getElementById("questions");
+let showAnswer = document.getElementById("answer")
+let start = document.getElementById("start");
+let startButton = document.getElementsByClassName("start-button");
+let quiz = document.getElementById("quiz");
+let choices = document.getElementById("choices");
+let scoreId = document.getElementById("score");
+let timer = document.getElementsByClassName("timer");
+let choiceA = document.getElementById("A");
+let choiceB = document.getElementById("B");
+let choiceC = document.getElementById("C");
+let choiceD = document.getElementById("D");
+let saveButton = document.getElementById("save-button");
+let initialsInput = document.getElementById("initialsInput");
+
+let count = 0;
+let questionLength = questions.length;
+let currentQuestion = 0;
+let timer;
+let startingTime = 50;
+let ticker;
+let score = 0;
+let correct = questions.correct;

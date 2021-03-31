@@ -28,7 +28,7 @@
 
 // Link elements to the DOM
 var questions = document.getElementById("questions");
-var showAnswer = document.getElementById("answer")
+var showAnswer = document.getElementById("answer");
 var start = document.getElementById("start");
 var sbutton = document.getElementById("sbutton");
 var quiz = document.getElementById("quiz");
@@ -44,7 +44,6 @@ var providedints = document.getElementById("providedints");
 
 // Come up with multiple choice questions
 // Questions are from: https://topessaywriter.org/multiple-choice-trivia-questions/
-
 var questions = [
 {
     question: "Which of the following ingredients is not normally used to brew beer?",
@@ -136,6 +135,7 @@ function startQuiz() {
         }
     }, 1000);
 
+    // Hide start page when next function is called
     start.style.display = "none";
     renderQuestion();
     quiz.style.display = "block";
@@ -162,9 +162,12 @@ function checkAnswer(event) {
 
     // When a correct answer is chosen, a <p> tag shows "CORRECT"
     if (chosenAnswer === questions[currentQuestion].correct) {
+        // Add one to the score
         score++;
         showAnswer.innerHTML = "<span style='color:#008000'>CORRECT</span>";
+        // Go to the next question
         currentQuestion++;
+        // When there are no more questions, end the game
         if (currentQuestion === questions.length) {
             endGame();
         } else {
@@ -179,6 +182,7 @@ function checkAnswer(event) {
         currentQuestion++;
         // Lose ten seconds when a wrong answer is clicked
         startingTime = startingTime - 10;
+        // When there are no more questions, end the game
         if (currentQuestion === questions.length) {
             endGame();
         } else {

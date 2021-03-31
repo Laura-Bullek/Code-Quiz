@@ -6,27 +6,14 @@
 
   <title>Code Quiz</title>
 
-  <!--CSS links -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Links to CSS and Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link  rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-  <!-- <section class="container" id="start">
-    <div class= "row">
-      <h1>Code Quiz</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat magni eius alias 
-           nulla debitis laborum possimus qui unde nihil adipisci odit, ratione, 
-           consectetur harum fugit. Odio deleniti reprehenderit perferendis!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat magni eius alias 
-           nulla debitis laborum possimus qui unde nihil adipisci odit, ratione, 
-           consectetur harum fugit. Odio deleniti reprehenderit perferendis!</p>
-        <button class="start-button">Start Here!</button>
-    </div>
-  </section> -->
+  <!-- Container to hold main content and start button-->
   <div class="container">
-
     <div id="start">
       <h1>Coding Quiz</h1>
       <p>Let's play by answering some strange trivia questions! There are a whole 50 seconds on the clock; but, be careful!</p>
@@ -34,6 +21,7 @@
       <button id="sbutton">Start</button>
     </div>
 
+    <!-- Container to hold the questions and answers-->
     <div class="list-group list-group-flush">
       <div id="quiz">
         <h2 class="list-group-item" id="question"></h2>
@@ -45,19 +33,22 @@
             <div class="list-group-item" class="choices" id="answer"></div>
           </div>
 
+      <!-- Timer box-->
       <div class="timer">
           <div id="counter"></div>
       </div>
     </div>
-  </div>
-    <div id="score"><input id="providedints"></input><button id="savebtn">Initials</button></div>
-  </div>
 
+    <!-- To insert score and initials-->
+    </div>
+      <div id="score">
+        <input id="providedints"></input>
+        <button id="savebtn">Initials</button>
+      </div>
+    </div>
 
-
+  <!-- Links to bootstrap and local JavaScript file-->
   <script src="./assets/javascript/javascript.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 

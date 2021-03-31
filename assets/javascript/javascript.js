@@ -39,7 +39,7 @@ var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 var savebtn = document.getElementById("savebtn");
-var providedints = document.getElementById("providedints");
+var providedInitials = document.getElementById("providedInitials");
 
 // Come up with multiple choice questions
 // Questions are from: https://topessaywriter.org/multiple-choice-trivia-questions/
@@ -200,7 +200,7 @@ function endGame() {
 
 savebtn.addEventListener("click", function (event) {
     event.preventDefault();
-    var savelocal = providedints.value
+    var savelocal = providedInitials.value
     saveinitials(savelocal)
     storeinitials(savelocal)
 });

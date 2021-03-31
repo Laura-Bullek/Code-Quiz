@@ -149,3 +149,41 @@ function startQuiz() {
     quiz.style.display = "block";
 }
 
+function renderQuestion() {
+    var q = questions[currentQuestion];
+    question.innerHTML = "<p>" + q.question + "</p>"
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
+    choiceD.innerHTML = q.choiceD;
+    showAnswer.innerHTML = "";
+}
+
+function checkAnswer(event) {
+    var chosenAnswer = event.target.innerHTML;
+
+    if (chosenAnswer === questions[currentQuestion].correct) {
+        score++;
+        showAnswer.innerHTML = "<span style='color:#008000'>CORRECT</span>";
+        currentQuestion++;
+        if (currentQuestion === questions.length) {
+            endGame();
+        } else {
+            setTimeout(function () {
+                renderQuestion();
+            }, 500)
+        }
+
+    } else {
+        showAnswer.innerHTML = "<span style='color:#ff0000'>WRONG</span>";
+        currentQuestion++;
+        startingTime = startingTime - 10;
+        if (currentQuestion === questions.length) {
+            endGame();
+        } else {
+            setTimeout(function () {
+                renderQuestion();
+            }, 500)
+        }
+    }
+}

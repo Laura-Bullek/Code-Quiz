@@ -28,8 +28,10 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 ```
+![Code Quiz Screenshot](https://i.postimg.cc/RhKK7m2S/Code-Quiz-Screencapture-1.png)
+![Code Quiz Screenshot](https://i.postimg.cc/ydF8nN6b/Code-Quiz-Screenshot-2.png)
+![Code Quiz Screenshot](https://i.postimg.cc/R0tSV0tZ/Code-Quiz-Screenshot-3.png)
 
-![Code Quiz Screenshot](https://i.postimg.cc/bYG5K4MB/Password-Generator-Screenshot.png)
 
 ## Installation
 No installations required for this project.

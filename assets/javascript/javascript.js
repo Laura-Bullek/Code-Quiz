@@ -193,3 +193,21 @@ function endGame() {
     scoreId.style.display = "block";
     clearTimeout(ticker)
 }
+
+savebtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    var savelocal = providedints.value
+    saveinitials(savelocal)
+    storeinitials(savelocal)
+});
+
+function storeinitials(e) {
+    localStorage.getItem("initals");
+    quiz.innerHTML = e + " Score " + score;
+    scoreId.style.display = "block";
+}
+
+function saveinitials(e) {
+    localStorage.setItem("initials", e)
+}
+

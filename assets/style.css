@@ -42,13 +42,22 @@ body {
     color: #fff;
     border: #51aaa3 2px inset;
     margin-top: 5px;
-    padding: 5px;  
+    padding: 5px;   
 }
 
 #A:hover , #B:hover , #C:hover ,#D:hover { 
     background-color: slategray;
 }
 
+.score {
+  float: right;
+  overflow: auto;
+  clear: both;
+}
+
+#quiz , #correct, #score {
+    display: none;  
+}
 @keyframes animatedBackground {
   from { background-position: 0 0; }
   to { background-position: 100% 0; }

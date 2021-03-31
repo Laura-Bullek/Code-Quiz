@@ -58,6 +58,7 @@ var questions = [
 // - Generate a form for user initials that has the score already generated
 // - Use local storage to store high score information
 
+// Link elements to the DOM
 let questions = document.getElementById("questions");
 let showAnswer = document.getElementById("answer")
 let start = document.getElementById("start");
@@ -73,6 +74,7 @@ let choiceD = document.getElementById("D");
 let saveButton = document.getElementById("save-button");
 let initialsInput = document.getElementById("initialsInput");
 
+// Initial variables
 let count = 0;
 let questionLength = questions.length;
 let currentQuestion = 0;
@@ -81,3 +83,14 @@ let startingTime = 50;
 let ticker;
 let score = 0;
 let correct = questions.correct;
+
+// Event listener for the start button
+start-button.addEventListener("click", startQuiz);
+
+// Event listeners for when answers are clicked
+choiceA.addEventListener("click", checkAnswer);
+choiceB.addEventListener("click", checkAnswer);
+choiceC.addEventListener("click", checkAnswer);
+choiceD.addEventListener("click", checkAnswer);
+
+

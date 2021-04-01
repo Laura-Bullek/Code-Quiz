@@ -193,7 +193,7 @@ function checkAnswer(event) {
 }
 
 function endGame() {
-    quiz.innerHTML = " Your Score: " + score + " out of 10";
+    quiz.innerHTML = " Your Score: " + score + " out of 8";
     scoreId.style.display = "block";
     clearTimeout(ticker)
 }

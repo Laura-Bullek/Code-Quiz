@@ -27,7 +27,7 @@ body {
 }
 
 /* Start button */
-#sbutton {
+#sbutton, #savebtn {
   display: inline-block;
   padding: 15px 25px;
   font-size: 24px;
@@ -41,29 +41,29 @@ body {
   border-radius: 10px;
 }
 
+/* Keeping quiz question container a fixed width */
+#quiz {
+  width: 600px;
+}
+
 /* Bottom right timer */
 .timer {
-    float:right;
-    color: #fff;
-    border: #51aaa3 2px inset;
-    margin-top: 5px;
-    padding: 5px;   
+  float:right;
+  color: #fff;
+  border: #51aaa3 2px inset;
+  margin-top: 5px;
+  padding: 5px;   
 }
 
 /* When hovering over each answer */
 #A:hover , #B:hover , #C:hover ,#D:hover { 
-    background-color: rosybrown;
-}
-
-.score {
-  float: right;
-  overflow: auto;
-  clear: both;
+  background-color: rosybrown;
+  cursor: pointer;
 }
 
 /* Questions, correct/wrong answers, nor score will display on first start page  */
 #quiz , #correct, #score {
-    display: none;  
+  display: none;  
 }
 
 /* Animation for background image */
